@@ -1,0 +1,26 @@
+{% extends "admin/admin/base.html.twig" %}
+
+{% block title %}Supprimer un livre{% endblock %}
+
+{% block body %}
+    <h2>Etes-vous sur de vouloir supprimer un livre</h2>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <strong>ID: </strong> {{ livre.id }}
+        </li>
+         <li class="list-group-item">
+            <strong>ID: </strong> {{ livre.titre }}
+        </li>
+         <li class="list-group-item">
+            <strong>ID: </strong> {{ livre.auteur}}
+        </li>
+        <li class="list-group-item">
+            <strong>ID: </strong> {{ livre.categorie.titre}}
+        </li>    
+    </ul>
+    <form method="post" class="mt-5">
+        <button type="submit" class="btn btn-success">Supprimer</button>
+        <a href="{{ path("livre")}}" class="btn btn-danger">Annuler</a>
+    </form>
+
+{% endblock %}

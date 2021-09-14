@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        
+        {% block stylesheets %}
+            {{ encore_entry_link_tags("app")}}
+
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags("app")}}
+
+        {% endblock %}
+    </head>
+    <body class="container">
+    {% include "_menu.html.twig" %}
+        {% for type, messages in app.flashes %}
+            {% for msg in messages %}
+                <div class="alert alert-{{ type}}">{{ msg|raw }}></div>
+            {% endfor %}
+        {% endfor %}
+        <h1>Bienvenue à la bibliothèque</h1>
+        {% block body %}
+        <p>Bonjour, {{ "jacquot" }} {{"achirac"}}</p>
+        {% endblock %}
+
+    <footer>
+        <p>Ceci est le footer</p>
+    </footer>
+    </body>
+</html>
+{# COMMENTAIRES TWIG #}
+{#
+    Il ne doit JAMAIS y avoir de balise PHP dans un fichier Twig.
+
+    Une balise twig est délimité par {% et %} (au lieu de < et > en html).
+
+    Entre les {% %}, il y a le type de la balise.
+
+    Une balise est fermé par {% 'end' suivi du type de la balise %}
+
+    - Pour afficher le contenu d'une variable on utilise {{ }}.
+    - Les noms des variables ne commencent pas par $.
+    - Les noms des variables correspondent aux indices de l'array passé en 2ème paramètre de la méthode 'render'.
+
+
+#}
