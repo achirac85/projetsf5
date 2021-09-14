@@ -21,7 +21,7 @@
                 <div class="alert alert-{{ type}}">{{ msg|raw }}></div>
             {% endfor %}
         {% endfor %}
-        <h1>Bienvenue à la bibliothèque</h1>
+        <h1>{% block h1 %}Biblio {% endblock %}</h1>
         {% block body %}
         <p>Bonjour, {{ "jacquot" }} {{"achirac"}}</p>
         {% endblock %}
